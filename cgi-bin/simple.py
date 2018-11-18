@@ -11,5 +11,5 @@ n = form.getfirst("number")
 sequence_list = []
 
 print('Content-type: text/html\nAccess-Control-Allow-Origin: *\n')
-print("<p>送信された数字: {}</p>".format("None" if n is None else int(n)))
-print("<p>送信されたテキスト: {}</p>".format(text))
+print("<p>Sending Number: {}</p>".format("None" if n is None else int(n)))
+print("<p>Sending Text: {}</p>".format(text))
