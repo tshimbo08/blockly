@@ -9,7 +9,7 @@ Blockly.JavaScript['freq'] = function(block) {
 '          dataType: "text",\n'+
 '          data: {\n'+
 '            number: "10",\n'+
-'            text: "FREQ "' + value_freq + '\n'+
+'            text: "FREQ ' + value_freq + '"\n'+
 '          },\n'+
 '        })\n'+
 '        .done(function(response) {\n'+

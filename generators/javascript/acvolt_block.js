@@ -9,7 +9,7 @@ Blockly.JavaScript['acvolt'] = function(block) {
 '          dataType: "text",\n'+
 '          data: {\n'+
 '            number: "10",\n'+
-'            text: "VOLT:AC "' + value_name + '\n'+
+'            text: "VOLT:AC ' + value_name + '"\n'+
 '          },\n'+
 '        })\n'+
 '        .done(function(response) {\n'+
