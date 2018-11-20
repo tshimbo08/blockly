@@ -6,7 +6,9 @@
   <title>Blockly Demo:</title>
   <link rel="stylesheet" href="style.css">
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!--
   <script src="/storage.js"></script>
+-->
   <script src="../blockly_compressed.js"></script>
   <script src="../blocks_compressed.js"></script>
   <script src="../javascript_compressed.js"></script>
@@ -15,22 +17,42 @@
   <script src="../lua_compressed.js"></script>
   <script src="../dart_compressed.js"></script>
   <script src="code.js"></script>
+  <!--
   <script src="../blocks/pcrwe_block.js"></script>
   <script src="../blocks/acvolt_block.js"></script>
   <script src="../blocks/freq_block.js"></script>
   <script src="../blocks/output_block.js"></script>
   <script src="../blocks/measvolt_block.js"></script>
   <script src="../blocks/wait_block.js"></script>
+  <script src="../blocks/tos9300_block.js"></script>
+-->
    <!--ソースコードジェネレーターモジュール-->
+   <!--
   <script src="../generators/javascript/pcrwe_block.js"></script>
   <script src="../generators/javascript/acvolt_block.js"></script>
   <script src="../generators/javascript/freq_block.js"></script>
   <script src="../generators/javascript/output_block.js"></script>
   <script src="../generators/javascript/measvolt_block.js"></script>
   <script src="../generators/javascript/wait_block.js"></script>
+-->
+  <script src="../generators/javascript/tos9300_block.js"></script>
+
+  <script>
+    function ExecCode()
+    {
+      var code = 'async function MyBlockly(){' + Blockly.JavaScript.workspaceToCode(Code.workspace) + '}\n MyBlockly();';
+      try {
+        console.log(code);
+        eval(code);
+      } catch (e) {
+        alert(e);
+      }
+    }
+  </script>
 
 </head>
 <body>
+  <button onclick="ExecCode()">実行</button>
   <table width="100%" height="100%">
     <tr>
       <td>
@@ -397,13 +419,19 @@
     <sep></sep>
     <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
-    <category name="PCR-WE"  colour="%{BKY_PROCEDURES_HUE}" >
+    <category name="PCR-WE"  colour="%{BKY_COLOUR_HUE}" >
       <block type="pcrwecontrol"></block>
       <block type="acvolt"></block>
       <block type="freq"></block>
       <block type="output"></block>
       <block type="measvolt"></block>
       <block type="wait"></block>
+    </category>
+    <category name="TOS9300"  colour="%{BKY_MATH_HUE}" >
+      <block type="tos9300_block"></block>
+      <block type="acw_block"></block>
+      <block type="dcw_block"></block>
+      <block type="getresult_block"></block>
     </category>
 
   </xml>
