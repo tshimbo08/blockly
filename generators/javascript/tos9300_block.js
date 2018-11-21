@@ -29,7 +29,7 @@ Blockly.JavaScript['acw_block'] = function(block) {
 '          dataType: "text",\n'+
 '          data: {\n'+
 '            number: "10",\n'+
-'            text: "FUNC ACW;ACW:Volt '+value_acvolt+';ACW:Volt:Freq '+value_freq+';ACW:VOLT:Tim '+value_time+';SENS:ACW:Judg '+value_upper+'"\n'+
+'            text: "FUNC ACW;ACW:Volt "+String('+value_acvolt+')+";ACW:Volt:Freq "+String('+value_freq+')+";ACW:VOLT:Tim "+String('+value_time+')+";SENS:ACW:Judg "+String('+value_upper+')\n'+
 '          },\n'+
 '        })\n'+
 '        .done(function(response) {\n'+
@@ -137,6 +137,7 @@ Blockly.JavaScript['acw_block'] = function(block) {
 '        .done(function(response) {\n'+
 '          $("#result").html(response);\n'+
 '          console.log(response);\n'+
+'          tos9300_result = response;\n'+
 '          resolve();\n'+
 '        })\n'+
 '        .fail(function() {\n'+
@@ -174,7 +175,7 @@ Blockly.JavaScript['dcw_block'] = function(block) {
 '          dataType: "text",\n'+
 '          data: {\n'+
 '            number: "10",\n'+
-'            text: "FUNC DCW;DCW:Volt '+value_dcvolt+';DCW:VOLT:Tim '+value_time+';SENS:DCW:Judg '+value_upper+'"\n'+
+'            text: "FUNC DCW;DCW:Volt "+String('+value_dcvolt+')+";DCW:VOLT:Tim "+String('+value_time+')+";SENS:DCW:Judg "+String('+value_upper+')\n'+
 '          },\n'+
 '        })\n'+
 '        .done(function(response) {\n'+
@@ -282,6 +283,7 @@ Blockly.JavaScript['dcw_block'] = function(block) {
 '        .done(function(response) {\n'+
 '          $("#result").html(response);\n'+
 '          console.log(response);\n'+
+'          tos9300_result = response;\n'+
 '          resolve();\n'+
 '        })\n'+
 '        .fail(function() {\n'+
@@ -302,7 +304,7 @@ Blockly.JavaScript['dcw_block'] = function(block) {
 };
 Blockly.JavaScript['getresult_block'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = 'tos9300_result';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
